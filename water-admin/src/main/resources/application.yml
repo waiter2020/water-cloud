@@ -1,0 +1,13 @@
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${spring.application.name}:${server.port}:@project.version@
+  client:
+    service-url:
+      defaultZone: http://172.0.0.2:9999/eureka
+server:
+  port: 8999
+
+spring:
+  application:
+    name: water-admin
