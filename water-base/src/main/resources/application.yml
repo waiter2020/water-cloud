@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    username: waiter
+    password: liulaoshidatabase
+    url: jdbc:mysql://139.199.20.39:3306/water_cloud?characterEncoding=utf8&useSSL=false
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+  type-aliases-package: com.upc.base.bean
+  mapper-locations: classpath:mapper/*.xml
+

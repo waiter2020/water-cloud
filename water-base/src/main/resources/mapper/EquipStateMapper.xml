@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.upc.base.mapper.EquipStateMapper">
+    <resultMap id="BaseResultMap" type="EquipState" >
+        <id column="id" property="id" jdbcType="VARCHAR" />
+        <result column="thresholdType" property="threshold_type" jdbcType="VARCHAR" />
+        <result column="thresholdValue" property="threshold_value" />
+        <result column="model" property="model"/>
+    </resultMap>
+
+    <select id="selectAll" resultMap="BaseResultMap">
+        SELECT * FROM `equip_state`
+    </select>
+
+
+</mapper>

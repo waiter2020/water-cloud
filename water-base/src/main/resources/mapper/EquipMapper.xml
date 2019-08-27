@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.upc.base.mapper.EquipMapper">
+    <resultMap id="BaseResultMap" type="Equip" >
+        <id column="id" property="id" jdbcType="VARCHAR" />
+        <result column="name" property="name" jdbcType="VARCHAR" />
+        <result column="group_id" property="groupId" />
+        <result column="address_name" property="address.name"/>
+        <result column="address_longitude" property="address.longitude"/>
+        <result column="address_latitude" property="address.latitude"/>
+    </resultMap>
+
+    <select id="selectAll" resultMap="BaseResultMap">
+        SELECT * FROM `equip`
+    </select>
+
+    <insert id="insert" parameterType="Equip">
+        INSERT INTO equip(
+                          id,name,group_id,address_name,address_longitude,address_latitude
+        )
+        VALUES (
+                #{id},#{name},#{groupId},#{address.name},#{address.longitude},#{address.latitude}
+               )
+    </insert>
+
+</mapper>

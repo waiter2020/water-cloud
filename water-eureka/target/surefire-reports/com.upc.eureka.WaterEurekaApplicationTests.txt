@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.upc.eureka.WaterEurekaApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 17.791 s - in com.upc.eureka.WaterEurekaApplicationTests
