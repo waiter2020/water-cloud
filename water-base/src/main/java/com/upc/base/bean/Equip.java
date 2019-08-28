@@ -1,5 +1,7 @@
 package com.upc.base.bean;
 
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.*;
 
 import java.io.Serializable;
@@ -13,11 +15,13 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@TableName("equip")
 public class Equip implements Serializable {
     /**
      * 编号
      */
     @NonNull
+    @TableId
     private String id;
     /**
      * 名称

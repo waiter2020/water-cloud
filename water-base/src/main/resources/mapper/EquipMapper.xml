@@ -10,17 +10,9 @@
         <result column="address_latitude" property="address.latitude"/>
     </resultMap>
 
-    <select id="selectAll" resultMap="BaseResultMap">
-        SELECT * FROM `equip`
-    </select>
+    <sql id="baseColumn">
+        id,name,group_id,address_name,address_longitude,address_latitude
+    </sql>
 
-    <insert id="insert" parameterType="Equip">
-        INSERT INTO equip(
-                          id,name,group_id,address_name,address_longitude,address_latitude
-        )
-        VALUES (
-                #{id},#{name},#{groupId},#{address.name},#{address.longitude},#{address.latitude}
-               )
-    </insert>
 
 </mapper>

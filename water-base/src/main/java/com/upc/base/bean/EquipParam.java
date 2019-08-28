@@ -1,5 +1,7 @@
 package com.upc.base.bean;
 
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -14,10 +16,12 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@TableName("equip_param")
 public class EquipParam {
     /**
      * 与设备id相同
      */
+    @TableId
     private String id;
     /**
      * 阈值类型

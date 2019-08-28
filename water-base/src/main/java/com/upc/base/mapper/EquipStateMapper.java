@@ -1,7 +1,9 @@
 package com.upc.base.mapper;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.upc.base.bean.EquipState;
 import org.apache.ibatis.annotations.Mapper;
+import org.springframework.lang.NonNull;
 
 import java.util.List;
 
@@ -11,6 +13,6 @@ import java.util.List;
  * @Version 1.0
  */
 @Mapper
-public interface EquipStateMapper {
-    List<EquipState> selectAll();
+public interface EquipStateMapper extends BaseMapper<EquipState> {
+
 }

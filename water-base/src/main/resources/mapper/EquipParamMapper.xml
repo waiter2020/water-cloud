@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.upc.base.mapper.EquipParamMapper">
-    <resultMap id="BaseResultMap" type="EquipParam" >
-        <id column="id" property="id" jdbcType="VARCHAR" />
-        <result column="thresholdType" property="threshold_type" jdbcType="VARCHAR" />
-        <result column="thresholdValue" property="threshold_value" />
+    <resultMap id="BaseResultMap" type="EquipParam">
+        <id column="id" property="id" jdbcType="VARCHAR"/>
+        <result column="threshold_type" property="thresholdType" jdbcType="VARCHAR"/>
+        <result column="threshold_value" property="thresholdValue"/>
         <result column="model" property="model"/>
     </resultMap>
 
-    <select id="selectAll" resultMap="BaseResultMap">
-        SELECT * FROM `equip_param`
-    </select>
+    <sql id="baseColumn">
+        id,threshold_type,threshold_value,model
+    </sql>
 
 
 </mapper>

@@ -1,24 +1,3 @@
-eureka:
-  instance:
-    prefer-ip-address: true
-    instance-id: ${spring.cloud.client.ip-address}:${spring.application.name}:${server.port}:@project.version@
-  client:
-    service-url:
-      defaultZone: http://127.0.0.1:9999/eureka
-
-server:
-  port: 8998
-
 spring:
-  application:
-    name: water-equip
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: '*'
-
-usr:
-  password: zhangkai0121
-  username: zhangkai0121
+  profiles:
+    active: dev

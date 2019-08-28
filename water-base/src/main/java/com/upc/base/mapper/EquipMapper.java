@@ -1,5 +1,6 @@
 package com.upc.base.mapper;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.upc.base.bean.Equip;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -12,8 +13,6 @@ import java.util.List;
  * @Version 1.0
  */
 @Mapper
-public interface EquipMapper {
+public interface EquipMapper extends BaseMapper<Equip> {
 
-    List<Equip> selectAll();
-    void insert(Equip equip);
 }

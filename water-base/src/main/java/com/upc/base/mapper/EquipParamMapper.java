@@ -1,5 +1,6 @@
 package com.upc.base.mapper;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.upc.base.bean.EquipParam;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -12,6 +13,6 @@ import java.util.List;
  */
 
 @Mapper
-public interface EquipParamMapper {
-    List<EquipParam> selectAll();
+public interface EquipParamMapper extends BaseMapper<EquipParam> {
+
 }
