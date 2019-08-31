@@ -12,6 +12,7 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
+import java.io.Serializable;
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
@@ -19,6 +20,7 @@ import java.util.List;
 
 /**
  * Created by  waiter on 18-6-18.
+ *
  * @author waiter
  */
 @Entity
@@ -27,22 +29,23 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class User implements UserDetails {
+public class User implements UserDetails , Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
+
     @Column(unique = true)
     @NotNull
-    @Size(min = 6,max = 50)
+    @Size(min = 6, max = 50)
     private String username;
+
     @Column(unique = true)
-    @Pattern(regexp = "^(1[0-9])\\d{9}$")
     private Long phoneNumber;
+
     @Column(unique = true)
     @Email
     private String email;
 
-    @Size(min = 6,max = 50)
     private String password;
     private Boolean enabled;
 
@@ -51,9 +54,9 @@ public class User implements UserDetails {
      */
     @ManyToMany(targetEntity = Role.class)
     @JoinTable(name = "user_role",
-                joinColumns = {@JoinColumn(name = "user_id")},
-                inverseJoinColumns = {@JoinColumn(name = "role_id")})
-    private List<Role> authorities ;
+            joinColumns = {@JoinColumn(name = "user_id")},
+            inverseJoinColumns = {@JoinColumn(name = "role_id")})
+    private List<Role> authorities;
 
     @Override
     public Collection<Role> getAuthorities() {

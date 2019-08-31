@@ -1,3 +1,7 @@
 spring:
   profiles:
     active: dev
+
+  jackson:
+    serialization:
+      fail-on-empty-beans: false

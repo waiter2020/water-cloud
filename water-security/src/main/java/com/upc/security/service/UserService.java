@@ -1,5 +1,7 @@
 package com.upc.security.service;
 
+
+import com.upc.security.bean.User;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
 /**
@@ -9,4 +11,5 @@ import org.springframework.security.core.userdetails.UserDetailsService;
  */
 
 public interface UserService extends UserDetailsService {
+    User addUser(User user);
 }

@@ -1,5 +1,6 @@
 package com.upc.security.service.impl;
 
+import com.upc.security.bean.Role;
 import com.upc.security.dao.RoleDao;
 import com.upc.security.service.RoleService;
 import lombok.AllArgsConstructor;
@@ -14,4 +15,9 @@ import org.springframework.stereotype.Service;
 @AllArgsConstructor
 public class RoleServiceImpl implements RoleService {
     private final RoleDao roleDao;
+
+    @Override
+    public Role getDefaultRole() {
+        return roleDao.getOne(1);
+    }
 }

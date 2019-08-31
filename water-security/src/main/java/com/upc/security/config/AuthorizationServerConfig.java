@@ -11,6 +11,7 @@ import org.springframework.core.annotation.Order;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.support.collections.RedisCollectionFactoryBean;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
 import org.springframework.security.config.annotation.web.configurers.oauth2.client.OAuth2ClientConfigurer;
@@ -38,14 +39,14 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     @Setter(onParam = @__({@Qualifier("MyClientDetailsServiceImpl")}))
     private MyClientDetailsService clientDetailsService;
 
+
     @Override
     public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
         security
                 // 开启/oauth/token_key验证端口无权限访问
                 .tokenKeyAccess("permitAll()")
                 // 开启/oauth/check_token验证端口认证权限访问
-                .checkTokenAccess("isAuthenticated()")
-                .allowFormAuthenticationForClients();
+                .checkTokenAccess("isAuthenticated()");
     }
 
     @Override

@@ -19,6 +19,11 @@ public class UserServiceImpl implements UserService {
     private final UserDao userDao;
 
     @Override
+    public User addUser(User user) {
+        return userDao.save(user);
+    }
+
+    @Override
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
         long phone;
         try {
