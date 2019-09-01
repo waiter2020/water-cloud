@@ -5,3 +5,6 @@ spring:
   jackson:
     serialization:
       fail-on-empty-beans: false
+  redis:
+    host: 139.199.20.39
+    port: 6666
