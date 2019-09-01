@@ -41,7 +41,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/swagger-ui.html","/v2/api-docs","/webjars/**").permitAll()
                 //静态资源访问无需认证
                 .antMatchers("/swagger-resources/**","/v2/api-docs", "/configuration/ui", "/swagger-resources", "/configuration/security", "/swagger-ui.html", "/webjars/**").permitAll()
-                .antMatchers("/user/add","/share/**").permitAll()
+                .antMatchers("/user/add","/oauth/**").permitAll()
                 //admin开头的请求，需要admin权限
                 .antMatchers("/admin/**").hasAnyRole("ADMIN")
                 //需登陆才能访问的url

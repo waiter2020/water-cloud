@@ -1,5 +1,6 @@
 package com.upc.security.config;
 import com.upc.security.service.MyClientDetailsService;
+import com.upc.security.service.UserService;
 import com.upc.security.service.impl.MyClientDetailsServiceImpl;
 import lombok.AllArgsConstructor;
 import lombok.Setter;
@@ -36,6 +37,8 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 
     private DataSource dataSource;
 
+    private UserService userService;
+
     @Override
     public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
         security
@@ -57,7 +60,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
                 .tokenStore(tokenStore())
                 .accessTokenConverter(accessTokenConverter())
                 .authenticationManager(authenticationManager)
-                .reuseRefreshTokens(false);
+                .reuseRefreshTokens(false).userDetailsService(userService);
     }
 
     @Bean

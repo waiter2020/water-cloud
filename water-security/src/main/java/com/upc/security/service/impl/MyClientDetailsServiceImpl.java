@@ -30,6 +30,7 @@ public class MyClientDetailsServiceImpl extends JdbcClientDetailsService {
 
     @Override
     public ClientDetails loadClientByClientId(String clientId) throws InvalidClientException {
+        log.info("loadClientByClientId"+clientId);
         return super.loadClientByClientId(clientId);
     }
 
